@@ -41,4 +41,19 @@
   Finished section always show even if audio is unavailable.
 
 ## Publish evidence
-(Filled in after the push + Pages verification.)
+- Repo: https://github.com/fahad3235/cooking-timer-bd (PUBLIC, created empty via
+  browser 2026-11-22 11:06–11:07 +06; no README/.gitignore/license).
+- Push: single snapshot via `github push-files`, commit
+  51eca759583fdf2fa5456e13fb2fff981c0b94e6 on main (approval granted),
+  14 files, ~75 KB. Remote verified: list_commits shows the commit;
+  get_file_contents index.html byte-identical to local;
+  tools/i18n-source.json contains raw Bengali intact
+  (রান্নার টাইমার বিডি verified).
+- Pages: enabled via browser 2026-11-22 11:20–11:22 +06 (Deploy from a branch,
+  main, / root). First visit 404, then HTTP 200 on retry ~1 min later;
+  live page renders the full app (form, 10 presets with correct times,
+  "Active timers — 0 active", Finished section). Independently re-verified
+  via page fetch: title "Cooking Timer BD - Kitchen Timers" + subtitle match.
+- This TEST_RESULTS.md update pushed as a second single-file snapshot after
+  the Pages verification (commit recorded in the run log).
+- Status: **PUBLISHED_AND_VERIFIED**.
