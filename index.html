@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cooking Timer BD - Kitchen Timers</title>
+<meta name="description" content="Offline bilingual (English / Bangla) kitchen timer app: several timers at once, quick presets, alarm, survives reloads.">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header class="topbar">
+  <div class="wrap topbar-inner">
+    <div>
+      <h1 data-i18n="appTitle">Cooking Timer BD</h1>
+      <p class="subtitle" data-i18n="appSubtitle">Several kitchen timers at once - eggs, tea, rice, cake. Fully offline.</p>
+    </div>
+    <div class="top-actions">
+      <button type="button" id="soundBtn" class="chip-btn">Sound on</button>
+      <button type="button" id="langBtn" class="chip-btn">Bangla</button>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+  <section class="card form-card" aria-labelledby="newTimerH">
+    <h2 id="newTimerH" data-i18n="newTimer">New timer</h2>
+    <form id="timerForm" novalidate>
+      <label class="field field-name">
+        <span data-i18n="timerName">Timer name (optional)</span>
+        <input type="text" id="inName" maxlength="60" data-i18n-ph="timerNamePh" placeholder="e.g. Boiled egg" autocomplete="off">
+      </label>
+      <div class="time-inputs">
+        <label class="field">
+          <span data-i18n="hours">Hours</span>
+          <input type="number" id="inH" min="0" max="23" inputmode="numeric" placeholder="0">
+        </label>
+        <label class="field">
+          <span data-i18n="minutes">Minutes</span>
+          <input type="number" id="inM" min="0" max="59" inputmode="numeric" placeholder="0">
+        </label>
+        <label class="field">
+          <span data-i18n="seconds">Seconds</span>
+          <input type="number" id="inS" min="0" max="59" inputmode="numeric" placeholder="0">
+        </label>
+      </div>
+      <p id="formError" class="error" role="alert" style="display:none"></p>
+      <button type="submit" class="primary-btn" data-i18n="startTimer">Start timer</button>
+    </form>
+  </section>
+
+  <section class="card" aria-labelledby="presetsH">
+    <h2 id="presetsH" data-i18n="quickPresets">Quick presets</h2>
+    <div id="presets" class="presets"></div>
+  </section>
+
+  <section aria-labelledby="activeH">
+    <div class="section-head">
+      <h2 id="activeH" data-i18n="activeTimers">Active timers</h2>
+      <span id="activeCount" class="count-badge">0 active</span>
+    </div>
+    <p id="emptyActive" class="empty" data-i18n="noTimers">No timers yet. Start one above, or tap a preset.</p>
+    <div id="activeList" class="timer-grid"></div>
+  </section>
+
+  <section aria-labelledby="doneH">
+    <div class="section-head">
+      <h2 id="doneH" data-i18n="finishedTimers">Finished</h2>
+      <button type="button" id="clearFinished" class="chip-btn" style="display:none" data-i18n="clearFinished">Clear finished</button>
+    </div>
+    <p id="emptyDone" class="empty" data-i18n="noFinished">Nothing finished yet.</p>
+    <div id="doneList" class="timer-grid"></div>
+  </section>
+</main>
+
+<footer class="wrap footer">
+  <p data-i18n="footerNote">Preset times are common kitchen guides - adjust to your stove and taste. Timers keep running if you reload the page. Fully offline - nothing leaves your device.</p>
+</footer>
+
+<script src="js/logic.js"></script>
+<script src="js/presets.js"></script>
+<script src="js/i18n.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
